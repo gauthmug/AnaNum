@@ -1,0 +1,56 @@
+Considérons le cas particulier d'un système linéaire dont la matrice est tri-diagonale et inversible :
+
+\begin{equation*}
+  A = 
+  \begin{bmatrix}
+      a_1   & c_1     &             &   0        \\
+      b_2   & a_2     & \ddots      &           \\
+            & \ddots  & \ddots      & c_{n-1}        \\
+        0   &         &    b_{n}    &     a_{n}
+    \end{bmatrix}
+    .
+\end{equation*}
+
+\begin{enumerate}[label=\alph*)]
+  \item Montrer qu'il existe deux matrices bi-diagonales $L$ et $U$ de la forme
+  
+  \begin{equation*}
+    L = 
+    \begin{bmatrix}
+          1       &         &             &   0        \\
+        \beta_2   & 1       &             &           \\
+                  & \ddots  &   \ddots    &          \\
+          0       &         &  \beta_{n}  &     1
+      \end{bmatrix}
+      , 
+      \quad
+      U = 
+      \begin{bmatrix}
+            \alpha_{1}  &    \gamma_{1}     &             &   0        \\
+                        &    \alpha_{2}     &    \ddots   &           \\
+                        &                   &   \ddots    & \gamma_{n-1}     \\
+            0           &                   &             & \alpha_{n}
+        \end{bmatrix}
+        ,
+  \end{equation*}
+  
+  telles que $A = LU$, et donner les expressions des coefficients $\alpha_{i}$, $\beta_{i}$ et $\gamma_{i}$ en fonction des coefficients de $A$.
+  Ces formules sont connues sous l'appellation d'\textit{Algorithme de Thomas}.
+  
+  \item Obtenir les formules résultantes de l'extension de l'algorithme de Thomas à la résolution du système $A \BoldX = \BoldF$, avec $\BoldF = \parent{f_{i}}^{n}_{i=1} \in \R^{n}$, donnée par
+    \begin{enumerate}[label=(\alph*)]
+      \item trouver $\BoldY$ tel que $L \BoldY = \BoldF$;
+      \item trouver $\BoldX$ tel que $U \BoldX = \BoldY$.
+    \end{enumerate}
+    
+  \item Combien d'opérations virgule flottante requiert l'algorithme précédent ?
+
+\end{enumerate}
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+\begin{enumerate}[label=\alph*)]
+  \item Par définition du supremum, si $\BoldX \neq \BoldZero$ alors
+  
+  \begin{equation*}
+    \triple{A} = \sup_{\BoldY \neq \BoldZero} \dfrac{\norm{A \BoldY}}{\norm{\BoldY}}
+    \geq \dfrac{\norm{A \BoldX}}{\norm{\BoldX}}
+    \Rightarrow 
+    \norm{A \BoldX} \leq \triple{A} \norm{\BoldX}.
+  \end{equation*}
+  
+  \item Par la définition de la norme matricielle subordonnée à une norme vectorielle
+  
+  \begin{equation*}
+    \triple{I} = \sup_{\BoldX \neq \BoldZero} \dfrac{\norm{I \BoldX}}{\norm{\BoldX}} = 1.
+  \end{equation*}
+  
+  \item Par la compatibilité de la norme, on déduit
+  
+  \begin{equation*}
+    \triple{A B}
+    = \sup_{\norm{\BoldX} = 1} \norm{A B \BoldX}
+    \leq \sup_{\norm{\BoldX} = 1} \triple{A} \norm{B \BoldX}
+    = \triple{A} \sup_{\norm{\BoldX} = 1} \norm{B \BoldX}
+    = \triple{A} \triple{B}.
+  \end{equation*}
+  
+\end{enumerate}

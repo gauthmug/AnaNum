@@ -1,0 +1,88 @@
+On considère un câble élastique qui occupe au repos le segment $\squared{0, 1}$, fixé aux extrémités, sur lequel on applique une force d'intensité $f \parent{x}$.
+Son déplacement au point $x$, $u \parent{x}$, est la solution de l'équation différentielle suivante :
+
+\begin{equation}
+\label{eq:equadiff}  
+  \begin{split}
+      &  - u'' \parent{x} = f \parent{x}, \quad x \in \parent{0, 1}, \\
+      &  u \parent{0} = 0, \quad u \parent{1} = 0.
+  \end{split}
+\end{equation}
+
+Soit $N \in \N$, $h = 1/N$ et $x_{i} = ih$ pour $i = 0, \dots, N$; pour approcher la solution $u \parent{x}$, on considère la discrétisation de l'intervalle $\parent{0, 1}$ en $N$ sous-intervalles $\parent{x_{i}, x_{i+1}}$, et on construit une approximation $u_{i}$ de $u \parent{x_{i}}$ par la méthode des différences finies.
+Cette méthode requiert de résoudre numériquement le système linéaire tridiagonal $A \BoldU = \BoldB$ qui suit :
+
+\begin{equation}
+\label{eq:systri}
+  \dfrac{1}{h^{2}}
+  \begin{bmatrix}
+        2       &   -1    &             &         &     \\
+       -1       &   2     &      -1     &         &     \\
+                & \ddots  &   \ddots    &  \ddots &     \\
+                &         &      -1     &     2   &  -1   \\
+                &         &             &    -1   &   2
+  \end{bmatrix}
+  \begin{bmatrix}
+    u_{1} \\
+    u_{2} \\
+    \vdots \\
+    u_{N-2} \\
+    u_{N-1} 
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    f \parent{x_{1}} \\
+    f \parent{x_{2}}  \\
+    \vdots \\
+    f \parent{x_{N-2}}  \\
+    f \parent{x_{N-1}}  
+  \end{bmatrix}
+\end{equation}
+
+où $\BoldU = \squared{u_{1}, u_{2}, \dots, u_{N-1}}^{\top}$ et $\BoldB = \squared{f \parent{x_{1}}, f \parent{x_{2}}, \dots, f \parent{x_{N-1}}}^{\top}$.
+Plus $N$ est grand, plus l'approximation sera précise et plus la taille du système linéaire à résoudre sera élevée.
+
+\begin{enumerate}[label=\alph*)]
+  \item On suppose que la force appliquée soit $f \parent{x} = x \parent{1 - x}$ et on prend $N = 20$ intervalles.
+        Construire la matrice $A$ et le vecteur $\BoldB$ correspondants, à l'aide des commandes suivantes :
+
+\begin{verbatim}
+f = @(x) x.*(1-x);
+N = 20; h = 1/N;
+x = linspace(h, 1-h, N-1)'; % on transpose pour avoir un vecteur colonne
+b = f(x);
+A = (N^2)*(diag(2*ones(N-1, 1),0) - diag(ones(N-2,1) - diag(ones(N-2,1),-1));
+\end{verbatim}
+        
+        Calculer la factorisation $LU$ de $A$ avec la commande \textsc{MATLAB} \texttt{lu}.
+        Vérifier que la matrice de permutation $P$ est l'identité (on sait de la théorie qu'aucune permutation de lignes n'est effectuée dès que la matrice est symétrique définie positive, ce qui est le cas de $A$).
+        
+        Calculer également la factorisation de Cholesky de $A$ (commande \texttt{chol}) et remarquer qu'elle diffère de la précédente.
+        
+        
+  \item Mettre en oeuvre l'algorithme de \textit{substitution directe} pour la résolution d'un système triangulaire inférieure et l'algorithme de \textit{substitution rétrograde} pour la résolution d'un système triangulaire supérieure. Utiliser et compléter les fonctions suivantes :
+  
+        \lstinputlisting{s3/matlab/ex2_dir_incomplete.m}
+
+        \lstinputlisting{s3/matlab/ex2_retro_incomplete.m}
+  
+        Calculer la solution du système linéaire $A \BoldU = \BoldB$ à partir de la factorisation $A = LU$, en utilisant les fonctions \texttt{subs\_directe} et \texttt{subs\_retrograde} pour résoudre les deux systèmes triangulaires.
+  
+  
+  \item A l'aide de la commande \texttt{plot}, représenter le déplacement $\BoldU$ du câble aux noeuds $x_{i}$ définis au point 1.
+  
+  \item Etudier le comportement du conditionnement de la matrice $A$, $K \parent{A}$, lorsque $N$ augmente, en traçant le graphe des valeurs de $K \parent{A}$ pour $N = 10, 20, \dots, 120$.
+        Tracer le graphe bilogarithmique des mêmes valeurs avec la commande \texttt{loglog}.
+        Quel type de courbe obtient-on ?
+        Si on suppose une relation linéaire $\log_{10} K \parent{A} = m \log_{10} N + c$ pour le graphe bilogarithmique, alors on a $K \parent{A} = C N^{m}$ (avec $C = 10^{c}$) : calculer les constantes $m$ et $C$.
+        De combien $K \parent{A}$ croît-il lorsque on double le nombre $N$ des sous-intervalles ?
+        
+        
+        
+        
+\end{enumerate}
+
+
+
+
+

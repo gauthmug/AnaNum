@@ -1,0 +1,111 @@
+\documentclass[a4paper,11pt]{report}
+
+%% The two first options are wrong in english: they do not agree with some standard english convenions
+%\usepackage[utf8] {inputenc}	% LaTeX, comprends les accents !
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}			% plus beau
+
+\usepackage[a4paper]{geometry}
+\geometry{hscale=0.75,vscale=0.8,centering}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsfonts} % Equations etc
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[pdftex]{graphicx} %Images dans le PDF
+\usepackage{color}
+\usepackage{chessboard}
+\usepackage{booktabs,tabularx,multirow}
+\usepackage{tikz,pgfplots}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage[framed, autolinebreaks, useliterate]{mcode}
+
+
+\graphicspath{{./images/}}
+
+
+%% my own commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+
+\newcommand{\Norm}{\mathcal{N}}
+
+\newcommand{\EL}{\mathcal{L}}
+\newcommand\LRA{\Leftrightarrow}
+
+
+\newcommand{\BoldB}{\mathbf{b}}
+\newcommand{\BoldF}{\mathbf{f}}
+\newcommand{\BoldR}{\mathbf{r}}
+\newcommand{\BoldV}{\mathbf{v}}
+\newcommand{\BoldU}{\mathbf{u}}
+\newcommand{\BoldX}{\mathbf{x}}
+\newcommand{\BoldY}{\mathbf{y}}
+\newcommand{\BoldZero}{\mathbf{0}}
+
+
+
+\newcommand\parent[1]{\left(#1\right)}
+\newcommand\abs[1]{\left\lvert#1\right\rvert}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\triple[1]{\left\lvert\lvert\lvert#1\right\rvert\rvert\rvert}
+\newcommand\bracket[1]{\left\{#1\right\}}
+\newcommand\squared[1]{\left[#1\right]}
+
+
+\newcommand{\MAT}{\textsc{MATLAB}}
+\setlength\parindent{0pt}
+
+
+
+\newtheorem{theorem}{{ Theorem}}
+\newtheorem{procedure}{{Procedure}}
+\newtheorem{proposition}{{Proposition}}
+\newtheorem{lemme}[theorem]{{Lemma}}
+\newtheorem{hypothese}{{Hypothesis}}
+
+
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{{Remark}}
+\newtheorem{exercise}{Exercise}
+\newtheorem{notation}{Notation}[definition]
+\newtheorem{axiom}{Axiom}
+\newtheorem{example}{Example}
+
+
+%% counter for ex
+
+\renewcommand{\thesection}{Exercice \Alph{section}}
+\newcommand\subsectionStyle[1]{\textbf{#1}}
+
+\newcounter{Exercice}[section]
+\newenvironment{ex}{
+    \stepcounter{Exercice} 
+    \subsectionStyle{Exercice\Alph{section} \theExercice} \par
+}{\vspace{1cm}}
+
+%% counter for sol
+
+\renewcommand{\thesection}{Solution \Alph{section}}
+
+\newcounter{Solution}[section]
+\newenvironment{sol}{
+    \stepcounter{Solution} 
+    \subsectionStyle{Solution\Alph{section} \theSolution} \par
+}{\vspace{1cm}}
+
+
+
+

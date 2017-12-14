@@ -1,0 +1,37 @@
+\begin{enumerate}[label=\alph*)]
+  \item Soit $A \in \R^{n \times n}$ une matrice symétrique définie positive et soient $\lambda_{i}$ et $\BoldV_{i}$, $i = 1, \dots, n$, les valeurs propres et les vecteurs propres de $A$.
+  Montrer que si $\BoldX$ est la solution du système linéaire $A \BoldX = \BoldB$, alors
+
+  \begin{equation*}
+    \BoldX = \sum_{i = 1}^{n} \parent{c_{i} / \lambda_{i}} \BoldV_{i},
+  \end{equation*}
+
+  où $c_{i}$ est la $i$-ème composante de $\BoldB$ dans la base des vecteurs propres de $A$.
+  
+  \item On se donne maintenant le système linéaire $A \BoldX = \BoldB$ suivant
+  
+  \begin{equation*}
+        \begin{bmatrix}
+          1001 & 1000  \\
+          1000 & 1001
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+          x_{1}   \\
+          x_{2} 
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          b_{1}   \\
+          b_{2} 
+        \end{bmatrix}
+        \quad 
+        ,
+  \end{equation*}
+  
+  où $A$ est mal-conditionnée avec les valeurs propres $\lambda_{1} = 1, \lambda_{2} = 2001$.
+  En décomposant le second membre sur la base des vecteurs propres de la matrice $A$, expliquer pourquoi, lorsque $\BoldB = \parent{2001, 2001}^{\top}$, une petite perturbation $\delta \BoldB = \parent{1, 0}^{\top}$ produit de grandes variations dans la solution, et réciproquement, si $\BoldB = \parent{1, -1}^{\top}$, une petite variation $\delta \BoldX = \parent{0.001, 0}^{\top}$ dans la solution induit de grandes variations dans $\BoldB$.
+  
+  
+\end{enumerate}
+

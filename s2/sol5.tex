@@ -1,0 +1,85 @@
+\begin{enumerate}[label=\alph*)]
+  \item Puisque \footnote{On suppose (toujours) que $\norm{\cdot}$ est une norme matricielle subordonnée à une norme vectorielle.} $\norm{I} = 1$, on a (Exercice 2, Série 2)
+  
+  \begin{equation*}
+    1 = \norm{I}
+    \leq \norm{I - C} \norm{\parent{I - C}^{-1}}
+    \leq \parent{1 + \norm{C}} \norm{\parent{I - C}^{-1}},
+  \end{equation*}
+  
+  ce qui donne la première égalité de (\refeq{eq:normC}).
+  Pour la seconde, en remarquant que $I = I - C + C$ et en multipliant à droite les deux membres par $\parent{I - C}^{-1}$, on a $\parent{I - C}^{-1} = I + C \parent{I - C}^{-1}$.
+  En prenant les normes, on obtient
+  
+  \begin{equation*}
+    \norm{\parent{I - C}^{-1}} \leq 1 + \norm{C} \norm{\parent{I - C}^{-1}},
+  \end{equation*}
+  
+  d'où on déduit la seconde inégalité, puisque $\norm{C} < 1$.
+  
+  \item Soit
+  
+  \begin{equation*}
+    \parent{A + \delta A} \parent{\BoldX + \delta \BoldX} = \BoldB + \delta \BoldB.
+  \end{equation*}
+  
+  Alors, on a
+  
+  \begin{equation*}
+    \parent{I + A^{-1} \delta A} \parent{\BoldX + \delta \BoldX} = \BoldX + A^{-1} \delta \BoldB.
+  \end{equation*}
+  
+  De plus, puisque $\gamma K \parent{A} < 1$ et $\norm{\delta A} \leq \gamma \norm{A}$ on a 
+  
+  \begin{equation*}
+    \norm{A^{-1} \delta A}
+    \leq \norm{A^{-1}} \norm{\delta A}
+    \leq \gamma \norm{A^{-1}} \norm{A}
+    = \gamma K \parent{A} < 1.
+  \end{equation*}
+  
+  Alors, $\rho \parent{A^{-1} \delta A} < 1$ et $I + A^{-1} \delta A$ est inversible.
+  En prenant l'inverse de cette matrice et en passant aux normes, on obtient
+  
+  \begin{equation*}
+    \norm{\BoldX + \delta \BoldX}
+    \leq \norm{\parent{I + A^{-1} \delta A}^{-1}} \parent{\norm{\BoldX} + \gamma \norm{A^{-1}} \norm{\BoldB}}.
+  \end{equation*}
+  
+  Alors, l'inégalité du point 1 donne 
+  
+  \begin{equation*}
+    \norm{\BoldX + \delta \BoldX}
+    \leq \dfrac{1}{1 - \norm{A^{-1} \delta A}} \parent{\norm{\BoldX} + \gamma \norm{A^{-1}} \norm{\BoldB}},
+  \end{equation*}
+  
+  ce qui implique
+  
+  \begin{equation*}
+    \dfrac{\norm{\BoldX + \delta \BoldX}}{\norm{\BoldX}}
+    \leq \dfrac{1 + \gamma K \parent{A}}{1 - \gamma K \parent{A}},
+  \end{equation*}
+  
+  puisque $\norm{A^{-1} \delta A} \leq \gamma K \parent{A}$ et $\norm{\BoldB} \leq \norm{A} \norm{\BoldX}$.
+  
+  \item Montrons à présent que l'inéquation (\refeq{eq:xDelta}) est correcte.
+  En retranchant $A \BoldX = \BoldB$ de \eqref{eq:xPlusDelta}, on a 
+  
+  \begin{equation*}
+    A \delta \BoldX = - \delta A \parent{\BoldX + \delta \BoldX} + \delta \BoldB.
+  \end{equation*}
+  
+  En prenant l'inverse de $A$ et en passant aux normes, on obtient l'inégalité suivante 
+  
+  \begin{equation*}
+    \begin{split}
+      \norm{\delta \BoldX}
+      & \leq \norm{A^{-1} \delta A} \norm{\BoldX + \delta \BoldX} + \norm{A^{-1}} \norm{\delta \BoldB} \\
+      & \leq \gamma K \parent{A} \norm{\BoldX + \delta \BoldX} + \gamma \norm{A^{-1}} \norm{\BoldB}
+    \end{split}
+  \end{equation*}
+  
+  En divisant les deux membres par $\norm{\BoldX}$ et en utilisant l'inégalité triangulaire $\norm{\BoldX + \delta \BoldX} \leq \norm{\BoldX} + \norm{\delta \BoldX}$, on obtient finalement (\refeq{eq:xDelta}).
+  
+  
+\end{enumerate}

@@ -1,0 +1,32 @@
+En utilisant la commande \texttt{diag}, définir en \textsc{MATLAB} la matrice $A \in \R^{n \times n}$ avec $n = 10$
+
+\begin{equation*}
+  \begin{bmatrix}
+      2   & -1  &         &         &         &    \\
+      -1  & 2   & -1      &         &         &    \\
+          & -1  & 2       & -1      &         &    \\
+          &     & \ddots  & \ddots  & \ddots  &     \\
+          &     &         &         &         &    \\
+          &     &         &         &    -1   &  2  
+    \end{bmatrix}
+\end{equation*}
+
+
+Ensuite, calculer les quantités suivantes :
+\begin{enumerate}[label=\alph*)]
+  \item le déterminant de $A$ ;
+  \item les normes $\norm{A}_{1}$, $\norm{A}_{2}$, $\norm{A}_{\infty}$ (tapez \texttt{help norm} pour voir les options) ;
+  \item le rayon spectral de $A$, noté $\rho \parent{A}$. On rappelle que $\rho \parent{A} = \max_{j = 1, \dots, n} \abs{\lambda_{j} \parent{A}}$, ou $\lambda_{j} \parent{A}$ sont les valeurs propres de $A$. Vérifier que, puisque $A$ est symétrique et définie positive, on a $\rho \parent{A} = \norm{A}_{2}$ ;
+\end{enumerate}
+
+Visualiser les vecteurs propres $\mathbf{v}_{j}, j \in \bracket{1, \dots, 10}$ en utilisant les commandes \texttt{[v, lambda]=eig(A)} et \texttt{plot(v)}.
+
+
+En utilisant \MAT, vérifier que la matrice $V$ (dont les colonnes sont égales aux vecteurs propres de $A$) permet de diagonaliser la matrice $A$. En particulier, vérifier que
+\begin{equation*}
+  V^{-1} A V = D = \text{diag} \bracket{\lambda_{1}, \dots, \lambda_{n}}.
+\end{equation*}
+
+
+Visualiser finalement la structure des matrices \texttt{A}, \texttt{V}, \texttt{D} (avec la commande \texttt{spy}).
+

@@ -1,0 +1,25 @@
+On rappelle que si $M \in \R^{n \times n}$, la factorisation $LU$ de $M$ avec $l_{ii} = 1$ pour $i = 1, \dots , n$ existe et est unique si et seulement si les sous-matrices principales $M_{i}$ de $M$ d'ordre $i = 1, \dots , n - 1$ sont inversibles (voir Théorème 3.4 à la page 77 du livre).
+Dans ce cas :
+
+\begin{equation*}
+  M = \begin{bmatrix}
+        1       & 0   \\
+        l_{21}  & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        u_{11} & u_{12}   \\
+        0      & u_{22}
+      \end{bmatrix}
+  =
+      \begin{bmatrix}
+        u_{11}          & u_{12}   \\
+        l_{21} u_{11}   & l_{21} u_{12} + u_{22}
+      \end{bmatrix}
+  .
+\end{equation*}
+
+La matrice singulière $A$, dont la sous-matrice principale $A_{1} = 1$ est inversible, admet une unique factorisation $LU$.
+La matrice inversible $B$ dont la sous-matrice $B_{1}$ est singulière n'admet pas de factorisation,
+tandis que la matrice (singulière) $C$, dont la sous-matrice $C_{1}$ est singulière, admet une infinité de factorisations de la forme $C = L_{\beta} U_{\beta}$,
+avec $l^{\beta}_{11} = 1$, $l^{\beta}_{21} = \beta$, $l^{\beta}_{22} = 1$, et $u^{\beta}_{11} = 0$, $u^{\beta}_{12} = 1$, $u^{\beta}_{22} = 2 - \beta, \ \quad \forall \beta \in \R$.
+

@@ -1,0 +1,53 @@
+En utilisant l'astuce, on montre directement que cette définition forme une norme matricielle.
+
+\begin{enumerate}[label=\alph*)]
+  \item Si $\norm{A \BoldX} \geq 0$, alors $\norm{A} = \sup_{\norm{\BoldX} = 1} \norm{A \BoldX} \geq 0$. De plus
+  
+  \begin{equation*}
+    \norm{A} = \sup_{\BoldX \neq \BoldZero} \dfrac{\norm{A \BoldX}}{\norm{\BoldX}} = 0
+    \LRA
+    \norm{A \BoldX} = 0 \ \forall \ \BoldX \neq \BoldZero,
+  \end{equation*}
+  
+  ou encore
+  
+  \begin{equation*}
+    A \BoldX = 0 \ \forall \ \BoldX \neq \BoldZero
+    \LRA
+    A = \BoldZero.
+  \end{equation*}
+  
+  Donc, $\norm{A} = 0 \LRA A = \BoldZero$.
+  
+  \item Soit un scalaire $\alpha$, on a 
+  
+  \begin{equation*}
+    \norm{\alpha A}
+    = \sup_{\norm{\BoldX} = 1} \norm{\alpha A \BoldX}
+    = \abs{\alpha} \sup_{\norm{\BoldX} = 1} \norm{A \BoldX}
+    = \abs{\alpha} \norm{A}.
+  \end{equation*}
+  
+  \item Vérifions enfin l'inégalité triangulaire. Par définition du supremum, si $\BoldX \neq \BoldZero$ alors
+  
+  \begin{equation*}
+    \dfrac{\norm{A \BoldX}}{\norm{\BoldX}} \leq \norm{A}
+    \Rightarrow \norm{A \BoldX} \leq \norm{A} \norm{\BoldX},
+  \end{equation*}
+  
+  ainsi, en prenant $\BoldX$ de norme 1, on obtient
+  
+  \begin{equation*}
+    \norm{\parent{A + B} \BoldX}
+    \leq \norm{A \BoldX} + \norm{B \BoldX}
+    \leq \norm{A} + \norm{B}, 
+  \end{equation*}
+  
+  d'où on déduit $\norm{A + B} = \sup_{\norm{\BoldX} = 1} \norm{\parent{A + B} \BoldX} \leq \norm{A} + \norm{B}$.
+  
+  
+  
+\end{enumerate}
+
+
+

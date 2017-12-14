@@ -1,0 +1,25 @@
+\begin{enumerate}[label=\alph*)]
+  \item En prenant $n = 1000$, écrire en \textsc{MATLAB} la matrice $n \times n$ suivante :
+  
+        \begin{equation*}
+          A = \begin{bmatrix}
+                1 & \textbf{1}^{\top}   \\
+                \textbf{1} & -I_{n - 1}
+              \end{bmatrix}
+        \end{equation*}
+
+        où $\textbf{1}$ est un vecteur colonne unitaire de longueur $n - 1$ et $I_{n-1}$ est la matrice identité $(n - 1) \times (n - 1)$.
+        Ensuite calculer la factorisation $LU$ de la matrice $A$ avec \textsc{MATLAB} (en utilisant la commande \texttt{lu} avec $L$, $U$ et $P$ comme sorties ; écrire \texttt{help lu} pour apprendre comme utiliser la commande).
+
+  \item Visualiser la structure des facteurs $L$ et $U$ et de la matrice de permutation $P$ (en utilisant la commande \texttt{spy}).
+  
+  \item Soient $\tilde{P}$ et $\tilde{Q}$ deux matrices de permutation.
+        On considère maintenant la matrice $\tilde{A} = \tilde{P} A \tilde{Q}$ obtenue en effectuant une permutation des lignes avec $\tilde{P}$ et une permutation des colonnes avec $\tilde{Q}$ et on note par $\tilde{A} = \tilde{L} \tilde{U}$ la factorisation $LU$ de la matrice $\tilde{A}$.
+        Trouver une permutation des lignes de $\tilde{P}$ et des colonnes de $\tilde{Q}$ telles que les facteurs $\tilde{L}$ et $\tilde{U}$ soient creux.
+
+  \item Calculer une factorisation $\tilde{A} = \tilde{L} \tilde{U}$ de la matrice $\tilde{A}$ à l'aide de la commande \texttt{lu} et visualiser la structure des facteurs $\tilde{L}$ et $\tilde{U}$.
+  
+  \item Transformer au format creux (en utilisant la commande \texttt{sparse}) les matrices $L$, $U$ du point (a), et les matrices $\tilde{L}$, $\tilde{U}$ du point (d).
+        En utilisant la commande \texttt{whos} comparer la taille en mémoire de ces matrices.
+        Que peut-on remarquer ?
+\end{enumerate}

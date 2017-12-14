@@ -1,0 +1,16 @@
+Soit $\norm{\cdot}$ une norme vectorielle. Prouver que la fonction
+\begin{equation}
+\label{eq:norm}
+  \norm{A} = \sup_{\mathbf{x \neq 0}} \dfrac{\norm{A \BoldX}}{\BoldX}
+\end{equation}
+
+est une norme matricielle, en remarquant que la relation (\refeq{eq:norm}) est équivalente \footnote{En effet, on peut définir pour tout $\BoldX \neq 0$ un vecteur unitaire $\mathbf{u} \equiv \BoldX /\norm{\BoldX}$ de sorte que (\refeq{eq:norm}) s'écrive
+\begin{equation*}
+  \norm{A} = \sup_{\norm{\mathbf{u}} = 1} \norm{A \mathbf{u}} = \norm{A \mathbf{w}}
+  \quad \text{avec }
+  \norm{\mathbf{w}} = 1.
+\end{equation*}} à
+
+\begin{equation*}
+  \norm{A} = \sup_{\norm{\BoldX} = 1} \norm{A \BoldX}.
+\end{equation*}

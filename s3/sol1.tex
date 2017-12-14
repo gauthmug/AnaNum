@@ -1,0 +1,43 @@
+\begin{enumerate}[label=\alph*)]
+  \item On appelle $L_{i}$ la $i$-ième ligne de $L$ et $U_{j}$ la $j$-ième colonne de $U$.
+        Il faut vérifier que
+        
+        \begin{equation*}
+          L_{i} U_{j} = \squared{A}_{ij}.
+        \end{equation*}
+        
+        Pour la matrice $A$, on a des éléments non nuls seulement pour $i = j$ ou $i = j \pm 1$.
+        On obtient les équations suivantes :
+        
+        \begin{itemize}
+          \item si $i = j$, on a $\beta_{i} \gamma_{i-1} + \alpha_{i} = a_{i}$;
+          \item si $i = j - 1$, on a $\gamma_{i} = c_{i}$;
+          \item si $i = j + 1$, on a $\beta_{i} \alpha_{j} = b_{i}$.
+        \end{itemize}
+        
+        Donc, $\alpha_{i}$, $\beta_{i}$ et $\gamma_{i}$ s'obtiennent facilement avec les relations suivantes :
+        
+        \begin{equation}
+        \label{eq:fact}
+          \alpha_{1} = a_{1}, \quad 
+          \beta_{i} = \dfrac{b_{i}}{\alpha_{i-1}}, \quad 
+          \alpha_{i} = a_{i} - \beta_{i} c_{i-1}, \quad 
+          \gamma_{i} = c_{i}.
+        \end{equation}
+        
+  \item La résolution du système $A \BoldX = \BoldF$ revient à résoudre deux systèmes bidiagonaux, $L \BoldY = \BoldF$ et $U \BoldX = \BoldY$, pour lesquels on a les formules suivantes :
+  
+        \begin{equation}
+        \label{eq:subst}
+          \begin{split}
+              \parent{L \BoldY = \BoldF} :  & \quad   y_{1} = f_{1}, \quad y_{i} = f_{i} - \beta_{i} y_{i-1}, \quad i = 2, \dots, n, \\
+              \parent{U \BoldX = \BoldY} :  & \quad   x_{n} = \dfrac{y_{n}}{\alpha_{n}}, \quad x_{i} = \dfrac{y_{i} - \gamma_{i} x_{i+1}}{\alpha_{i}}, \quad i = n-1, \dots, 1.
+          \end{split}
+        \end{equation}
+        
+  \item L'algorithme requiert $8n - 7$ flops : $3 \parent{n-1}$ flops pour la factorisation \eqref{eq:fact} et $5n - 4$ flops pour la substitution \eqref{eq:subst}.
+        
+        
+        
+        
+\end{enumerate}

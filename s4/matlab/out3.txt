@@ -1,0 +1,18 @@
+Name                  Size                Bytes  Class     Attributes
+
+A                  1000x1000            8000000  double              
+L                  1000x1000            8000000  double              
+P                  1000x1000            8000000  double              
+U                  1000x1000            8000000  double              
+a11                   1x1                     8  double              
+a12                   1x999                7992  double              
+a21                 999x1                  7992  double              
+a22                 999x999             7984008  double              
+n                     1x1                     8  double              
+sparseL            1000x1000            8016008  double    sparse    
+sparseU            1000x1000            8016008  double    sparse    
+sparse_tildeL      1000x1000              39992  double    sparse    
+sparse_tildeU      1000x1000              39992  double    sparse    
+tildeA             1000x1000            8000000  double              
+tildeL             1000x1000            8000000  double              
+tildeU             1000x1000            8000000  double              

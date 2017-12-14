@@ -1,0 +1,19 @@
+>> x = [1 4 7 2 1 2];
+>> y = [0 9 1 4 3 0];
+>> [ElByElProd, ScalProd, v] = operations(x,y)
+
+
+ElByElProd =
+
+     0    36     7     8     3     0
+
+
+ScalProd =
+
+    54
+
+
+v =
+
+     0    12    28     2     9     0
+

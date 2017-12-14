@@ -1,0 +1,100 @@
+On a 
+
+\begin{equation*}
+  A = \begin{bmatrix}
+        1 & \gamma  \\
+        0 & 1
+      \end{bmatrix}
+  , \quad
+  A^{-1} = \begin{bmatrix}
+        1 & - \gamma  \\
+        0 & 1
+      \end{bmatrix}.
+\end{equation*}
+
+Ainsi, puisque $\gamma \geq 0$,
+
+\begin{gather*}
+  \norm{A}_{1} = \max_{j = 1, 2} \sum_{i = 1}^{2} \abs{a_{ij}} = \max \bracket{1, 1 + \gamma} = 1 + \gamma, \\
+  \norm{A}_{\infty} = \max_{i = 1, 2} \sum_{j = 1}^{2} \abs{a_{ij}} = \max \bracket{1 + \gamma, 1} = 1 + \gamma, \\
+  \norm{A^{-1}}_{1} = \max \bracket{1, 1 + \gamma} = 1 + \gamma, \\
+  \norm{A^{-1}}_{\infty} = \max \bracket{1 + \gamma, 1} = 1 + \gamma.
+\end{gather*}
+
+Par conséquent,
+
+\begin{equation*}
+  K_{1} \parent{A}
+  = \norm{A}_{1} \norm{A^{-1}}_{1} 
+  = K_{\infty} \parent{A}
+  = \norm{A}_{\infty} \norm{A^{-1}}_{\infty}
+  = \parent{1 + \gamma}^{2}. 
+\end{equation*}
+
+On a
+
+\begin{equation*}
+  \BoldB = A \BoldX = \begin{bmatrix}
+        1   \\
+        1
+      \end{bmatrix},
+\end{equation*}
+
+en particulier $\norm{\BoldB}_{\infty} = 1$. 
+En perturbant le second membre du système $A \BoldX = \BoldB$ (on ne perturbe pas la matrice), on obtient un système perturbé de la forme
+
+\begin{equation*}
+  A \parent{\BoldX + \delta \BoldX} = \BoldB + \delta \BoldB,
+\end{equation*}
+
+donc
+
+\begin{equation*}
+  \delta \BoldX = A^{-1} \delta \BoldB.
+\end{equation*}
+
+On en tire que 
+
+\begin{equation*}
+  \norm{\delta \BoldX}_{\infty}
+  \leq \norm{A^{-1}}_{\infty} \norm{\delta \BoldB}_{\infty}.
+\end{equation*}
+
+En divisant par $\norm{\BoldX}_{\infty}$, on trouve 
+
+\begin{equation*}
+  \dfrac{\norm{\delta \BoldX}_{\infty}}{\norm{\BoldX}_{\infty}}
+  \leq \dfrac{\norm{A^{-1}}_{\infty}}{\norm{\BoldX}_{\infty}} \norm{\delta \BoldB}_{\infty}.
+\end{equation*}
+
+En plus, puisque $\norm{\BoldB}_{\infty} = 1$, on peut écrire
+
+\begin{equation*}
+  \dfrac{\norm{\delta \BoldX}_{\infty}}{\norm{\BoldX}_{\infty}}
+  \leq \underbrace{\dfrac{\norm{A^{-1}}_{\infty}}{\norm{\BoldX}_{\infty}}}_\text{$C$}
+  \dfrac{\norm{\delta \BoldB}_{\infty}}{\norm{\BoldB}_{\infty}}
+\end{equation*}
+
+avec $C = \dfrac{\norm{A^{-1}}_{\infty}}{\norm{\BoldX}_{\infty}}$ la constante cherchée.
+On a donc que 
+
+\begin{equation*}
+  C = \dfrac{1 + \gamma}{\max \bracket{1, \abs{1 - \gamma}}}.
+\end{equation*}
+
+On voit bien que $C \rightarrow 1$ quand $\gamma \rightarrow \infty$.
+Ainsi, pour le cas particulier de $\BoldB = \parent{1, 1}^{\top}$, le problème est bien conditionné.
+Remarquons que, dans le cas général ($\BoldB$ arbitraire), le problème est mal conditionné pour $\gamma$ grand.
+En effet, $K_{\infty} \parent{A} \rightarrow \infty$ quand $\gamma \rightarrow \infty$.
+Cet exercice met en évidence que le fait d'avoir une matrice avec un grand conditionnement n'empêche pas nécessairement le système global d'être bien conditionné pour des choix particuliers du second membre $\BoldB$.
+
+
+
+
+
+
+
+
+
+
+

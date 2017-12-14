@@ -1,0 +1,35 @@
+Supposons que $\norm{\delta A} \leq \gamma \norm{A}$, $\norm{\delta \BoldB} \leq \gamma \norm{\BoldB}$ avec $\gamma \in \R^{+}$ et $\delta A \in \R^{n \times n}$, $\delta \BoldB \in \R^{n}$.
+On veut montrer que, si $\gamma K \parent{A} < 1$, on a les inégalités suivantes :
+
+\begin{equation}
+\label{eq:xPlusDelta}
+  \dfrac{\norm{\BoldX + \delta \BoldX}}{\norm{\BoldX}}
+  \leq \dfrac{1 + \gamma K \parent{A}}{1 - \gamma K \parent{A}},
+\end{equation}
+
+\begin{equation}
+\label{eq:xDelta}
+  \dfrac{\norm{\delta \BoldX}}{\norm{\BoldX}}
+  \leq \dfrac{2 \gamma}{1 - \gamma K \parent{A}} \ K \parent{A}.
+\end{equation}
+
+\begin{enumerate}[label=\alph*)]
+  \item Si $C$ est une matrice carrée telle que $\rho \parent{C} < 1$, on sait (voir le Théorème 1.5 du livre) que $I - C$ est inversible.
+        Montrer que dans ce cas on a
+        
+        \begin{equation}
+        \label{eq:normC}
+          \dfrac{1}{1 + \norm{C}}
+          \leq \norm{\parent{I - C}^{-1}}
+          \leq \dfrac{1}{1 - \norm{C}}.
+        \end{equation}
+        
+        où $\norm{\cdot}$ est est une norme matricielle subordonnée à une norme vectorielle telle que $\norm{C} \leq 1$. 
+        
+        \item Montrer l'inégalité (\refeq{eq:xPlusDelta}) en utilisant le résultat du point 1 et le fait que $\parent{A + \delta A} \parent{\BoldX + \delta \BoldX} = \BoldB + \delta \BoldB$.
+        
+        \item Montrer l'inégalité (\refeq{eq:xDelta}). Suggestion: utiliser l'inégalité triangulaire $\norm{\BoldX + \delta \BoldX} \leq \norm{\BoldX} + \norm{\delta \BoldX}$.
+
+\end{enumerate}
+
+

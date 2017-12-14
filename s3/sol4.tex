@@ -1,0 +1,23 @@
+La matrice est symétrique et définie positive.
+En effet, la matrice est symétrique et tous les mineurs principaux dominants de $A$ sont positifs (critère de Sylvester).
+On a vu au cours que les coefficients $h_{ij}$ de $H^{\top}$ (triangulaire inférieure), avec $A = H^{\top} H$, peuvent être calculés comme suit : $h_{11} = \sqrt{a_{11}}$ et, pour $i = 2, ... ,n$, on a
+
+\begin{equation}
+\label{eq:h}
+  \begin{split}
+      h_{ij}  = & \  \dfrac{1}{h_{jj}} \parent{a_{ij} - \sum_{k = 1}^{j-1} h_{ik} h_{jk}}, \quad j = 1, \dots, i-1; \\
+      h_{ii}  = & \ \parent{a_{ii} - \sum_{k = 1}^{i-1} h_{ik}^{2}}^{1/2} .
+  \end{split}
+\end{equation}
+
+On obtient ainsi
+
+\begin{equation*}
+  H^{\top} = \begin{bmatrix}
+        1  & 0  & 0  & 0  \\
+        2  & 1  & 0  & 0  \\
+        3  & -5 & 1  & 0  \\
+        4  & 2  & 3  & 4 
+      \end{bmatrix}
+      .
+\end{equation*}

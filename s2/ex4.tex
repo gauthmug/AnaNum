@@ -1,0 +1,12 @@
+Étant donnée la matrice $A \in \R^{2 \times 2}$, $a_{11} = a_{22} = 1$, $a_{12} = \gamma$, $a_{21} = 0$, vérifier que pour $\gamma \geq 0$, $K_{\infty} \parent{A} = K_{1} \parent{A} = \parent{1 + \gamma}^{2}$.
+Soit $A \BoldX = \BoldB$ le système linéaire où $\BoldB$ est tel que $\BoldX = \parent{1 - \gamma, 1}^{\top}$ soit la solution.
+Trouver une majoration du type 
+
+\begin{equation*}
+  \dfrac{\norm{\delta \BoldX}_{\infty}}{\norm{\BoldX}_{\infty}}
+  \leq C \dfrac{\norm{\delta \BoldB}_{\infty}}{\norm{\BoldB}_{\infty}}
+\end{equation*}
+
+avec $C > 0$ une constante qui ne dépend que de $\norm{A^{-1}}_{\infty}$, $\norm{\BoldB}_{\infty}$ et $\norm{\BoldX}_{\infty}$.
+Le vecteur $\parent{\BoldX + \delta \BoldX}$ est la solution du système perturbé $A \parent{\BoldX + \delta \BoldX} = \parent{\BoldB + \delta \BoldB}$ avec $\delta \BoldB$ une perturbation du vecteur $\BoldB$.
+Le problème est-il bien conditionné par rapport à $\gamma \rightarrow \infty$ ?
